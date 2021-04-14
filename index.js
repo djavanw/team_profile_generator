@@ -12,9 +12,31 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 
-const teamMembers = [];
-const idArray = [];
+// const teamMembers = [];
+// const idArray = [];
 
-function appMenu () {
+// function appMenu () {
 
 }
+
+
+const questions = [
+  {
+    type: "input",
+    name: "startEntry",
+    message: "Do you need to add Team Members?",
+  },
+  
+]
+
+function writeHtml(fileName, data) {
+  console.log("HTML generated");
+  fs.writeFileSync(fileName, htmlGenerated (data))
+}
+
+function init() {
+  inquirer.prompt(questions)
+  .then((userResponses) => writeHtml("team.html", userResponses));
+}
+
+init();

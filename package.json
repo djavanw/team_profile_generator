@@ -7,9 +7,11 @@
     "lib": "lib",
     "test": "tests"
   },
+
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose"
   },
+ 
   "repository": {
     "type": "git",
     "url": "git+https://github.com/djavanw/team_profile_generator.git"

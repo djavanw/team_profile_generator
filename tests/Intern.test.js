@@ -1,5 +1,5 @@
-const Intern = require("../lib/Intern");
-const Employee = require("../lib/Employee");
+const Intern = require("../lib/intern");
+const Employee = require("../lib/employee");
 
 test("Can set school via constructor argument", () => {
   const testValue = "Austin";
@@ -13,8 +13,8 @@ test("getRole() should return \"Intern\"", () => {
   expect(e.getRole()).toBe(testValue);
 });
 
-test("Can get school via getSchool()", () => {
+test("Can find school via getSchool()", () => {
   const testValue = "Austin";
   const e = new Intern("Int", 2, "test@test.com", testValue);
-  expect(e.getschool()).toBe(testValue);
+  expect(e.getSchool()).toBe(testValue);
 });

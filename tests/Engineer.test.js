@@ -1,10 +1,10 @@
-const Engineer = require("../lib/Engineer");
-const Employee = require("../lib/Employee");
+const Engineer = require("../lib/engineer");
+const Employee = require("../lib/employee");
 
 test("Can set github username via constructor argument", () => {
     const testValue = "djavanw";
     const e = new Engineer("Eng", 3, "test@test.com", testValue);
-    expect(e.school).toBe(testValue);
+    expect(e.ghName).toBe(testValue);
 });
 
 test("getRole() should return \"Intern\"", () => {
@@ -16,5 +16,5 @@ test("getRole() should return \"Intern\"", () => {
 test("Can get github username via getGitHub()", () => {
     const testValue = "djavanw";
     const e = new Engineer("Eng", 3, "test@test.com", testValue);
-    expect(e.getschool()).toBe(testValue);
+    expect(e.getghAddress()).toBe(testValue);
 });

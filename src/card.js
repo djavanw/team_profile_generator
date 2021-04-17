@@ -11,12 +11,12 @@ function card (data) {
             li = `<li class="list-group-item">School: ${data.school}</li>`
     }
     return `
-    <div class="card">
-        <div class="jumbotron">
+    <div class="card" id="cardSection">
+        <div class="jumbotron" id="cardName">
             <h1>${data.name}</h1>
             <h2>${data.getRole()}</h2>
         </div>
-        <div class="card-body">
+        <div class="card-body" id="infoSection">
             <ul class="list-group">
                 <li class="list-group-item">ID: ${data.id}</li>
                 <li class="list-group-item">Email: <a href="mailto:">${data.email}</a></li>

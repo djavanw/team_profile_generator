@@ -1,6 +1,6 @@
 function htmlBody (card) {
     return `<!DOCTYPE html>
-    <html lang="en">
+<html lang="en">
     
     <head>
         <meta charset="UTF-8">
@@ -8,20 +8,19 @@ function htmlBody (card) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
             integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-        <title>Document</title>
-    
+        <title>Team Profile Generator</title>
     </head>
     
     <body>
         <div class="jumbotron text-center">
-               <h1>My Team</h1>
+            <h1>My Team</h1>
         </div>
         <div class="container">
-        <div class="card-deck">
+            <div class="card-deck">
                ${card}
+            </div>
         </div>
-    </div>
-</body>
+    </body>
 
 </html>
 

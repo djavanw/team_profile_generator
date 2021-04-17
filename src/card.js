@@ -1,5 +1,5 @@
 function card (data) {
-    let li = ""  
+    let li = ""; 
     switch(data.getRole()) {
        case "Manager":
            li = `<li class="list-group-item">Office Number: ${data.officeNumber}</li>`
@@ -10,21 +10,22 @@ function card (data) {
         default:
             li = `<li class="list-group-item">School: ${data.school}</li>`
     }
-    return `  <div class="card">
-    <div class="jumbotron">
-        <h1>${data.name}</h1>
-        <h2>${data.getRole()}</h2>
+    return `
+    <div class="card">
+        <div class="jumbotron">
+            <h1>${data.name}</h1>
+            <h2>${data.getRole()}</h2>
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item">ID: ${data.id}</li>
+                <li class="list-group-item">Email: <a href="mailto:">${data.email}</a></li>
+                ${li}  
+            </ul>
+        </div>
     </div>
-     <div class="card-body">
-         <ul class="list-group">
-             <li class="list-group-item">ID: ${data.id}</li>
-             <li class="list-group-item">Email: <a href="mailto:">${data.email}</a></li>
-              ${li}  
-           
-           </ul>
-     </div>
- </div>
     `
 }
 
 module.exports = card;
+//This is the actual template that will be used to generate the teamHtmlGenerated.html file.

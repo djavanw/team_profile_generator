@@ -43,7 +43,7 @@ function addMan() {
         {
             type: "input",
             name: "managerName",
-            message: "Enter the Manager's name: ",
+            message: "To create a Team Profile, a Manager be on each team. Enter the Manager's name: ",
             validate: needPosition,
         },
         {

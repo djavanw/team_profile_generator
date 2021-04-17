@@ -5,7 +5,7 @@
 ***
 
   ## Description:
-  X?X?X?
+  This is a command-line application that takes user input to generate a team profile roster.  The user will be asked a series of questions that must be answered and upon completion, a roster will be generated with the relevant information of each team member.
 
 ***
   ## Demostration:
@@ -24,11 +24,11 @@
 
 ***
   ## Installation:
-  
+  This application requires a Node.js JavaScript runtime environment and the inquirer module in order to run.  A `.gitignore` file that includes `node_modules/` and `.DS_Store/` must be created in order to not track the `nodes_modules` or upload it to GitHub and this must be accomplished before installing any npm dependencies.  In addition, a `package.json` with the required dependencies must be included into the repository.  This must be created before installing any dependencies by running the following command: `npm init`.  The following package must also be loaded:  inquirer.  
 
 ***
   ## Usage:
-  
+  The user will invoke the application by typing `node application.js` and will then proceed to answer the questions when they are presented.  A manager must be entered for each team.  There is validation logic in the application to ensure a manager is on each team.  
    
 ***
 ## Screenshots 
@@ -57,7 +57,7 @@
 
 ***
   ## Tests:
-  
+  This application does have testing parameters; however, the user does not have to execute this option.  The test performed by the developer was executed with the module package called `jest`.  Jest is a testing framework that provides a simple and methodical way of testing code to ensure the application will run in production.  Jest is a dev dependencies and the user would need to install this package to run the test with the command-line text of `npm run test`.
 
 ***
   ## Questions:

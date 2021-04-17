@@ -7,11 +7,9 @@
     "lib": "lib",
     "test": "tests"
   },
-
-  "scripts": {
+   "scripts": {
     "test": "jest --verbose"
   },
- 
   "repository": {
     "type": "git",
     "url": "git+https://github.com/djavanw/team_profile_generator.git"

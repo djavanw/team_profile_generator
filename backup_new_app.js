@@ -14,12 +14,21 @@ const teamMembers = [];
 
 const idArray = [];
 
+//Validation for user to enter a manager for each team creation.
+const needPosition = function (position) {
+    if (position) {
+        return true; 
+    } else {
+        return "Each team must have a manager for initial creation."
+    }
+}
+
 function makeTeam() {
     inquirer.prompt ([
       {
         type: "list",
         name: "startEntry",
-        message: "Please select the additional members to add to the team.",
+        message: "Please add additional members to the team or select none to generate the team profile.",
         choices: ["Engineer", "Intern", "None"]
       },
       
@@ -44,34 +53,35 @@ function makeTeam() {
 function generateTeam () {
     //This will make a constructor DB
     console.log(teamMembers)  
-    let teamCards = ""
+    let teamCards = "";
     for(let i = 0; i < teamMembers.length; i++) {
-       teamCards += card(teamMembers[i])
+       teamCards += card(teamMembers[i]);
     }
-    let genTeam = htmlBody(teamCards)
-    fs.writeFileSync("./dist/teamHtmlGenerated.html", genTeam)
+    let genTeam = htmlBody(teamCards);
+    fs.writeFileSync("./dist/teamHtmlGenerated.html", genTeam);
 }  
   function addMan() {
       inquirer.prompt ([
           {
               type: "input",
               name: "managerName",
-              message: "Enter the Manager's name.",
+              message: "Enter the Manager's name: ",
+              validate: needPosition,
           },
           {
              type: "input",
              name: "manID",
-             message: "Enter the Manager's ID number.", 
+             message: "Enter the Manager's ID number: ", 
           },
           {
               type: "input",
               name: "manEmail",
-              message: "Enter the Manager's email address.",
+              message: "Enter the Manager's email address: ",
           },
           {
               type: "input",
               name: "manOfficeNum",
-              message: "Enter the Manager's office number.",
+              message: "Enter the Manager's office number: ",
           },
       ]).then(answers => {
           const manager = new Manager(answers.managerName, answers.manID, answers.manEmail, answers.manOfficeNum);
@@ -86,22 +96,22 @@ function generateTeam () {
         {
             type: "input",
             name: "intName",
-            message: "Enter the Intern's name.",
+            message: "Enter the Intern's name: ",
         },
         {
            type: "input",
            name: "intID",
-           message: "Enter the Intern's ID number.", 
+           message: "Enter the Intern's ID number: ", 
         },
         {
             type: "input",
             name: "intEmail",
-            message: "Enter the Intern's email address.",
+            message: "Enter the Intern's email address: ",
         },
         {
             type: "input",
             name: "intSchool",
-            message: "Enter the Intern's school.",
+            message: "Enter the Intern's school: ",
         },
     ]).then(answers => {
         const intern = new Intern(answers.intName, answers.intID, answers.intEmail, answers.intSchool);
@@ -116,22 +126,22 @@ function addEng() {
         {
             type: "input",
             name: "engName",
-            message: "Enter the Engineer's name.",
+            message: "Enter the Engineer's name: ",
         },
         {
            type: "input",
            name: "engID",
-           message: "Enter the Engineer's ID number.", 
+           message: "Enter the Engineer's ID number: ", 
         },
         {
             type: "input",
             name: "engEmail",
-            message: "Enter the Engineer's email address.",
+            message: "Enter the Engineer's email address: ",
         },
         {
             type: "input",
             name: "engGithub",
-            message: "Enter the Engineer's github.",
+            message: "Enter the Engineer's github user name: ",
         },
     ]).then(answers => {
         const engineer = new Engineer(answers.engName, answers.engID, answers.engEmail, answers.engGithub);

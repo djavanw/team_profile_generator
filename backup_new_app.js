@@ -15,14 +15,61 @@ const teamMembers = [];
 const idArray = [];
 
 //Validation for user to enter a manager for each team creation.
-const needPosition = function (position) {
+const needPosition = (position) => {
     if (position) {
         return true; 
     } else {
         return "Each team must have a manager for initial creation."
     }
+};
+
+
+//This function will generate the HTML file
+function generateTeam () {
+    //This will make a constructor DB
+    console.log(teamMembers)  
+    let teamCards = "";
+    for(let i = 0; i < teamMembers.length; i++) {
+       teamCards += card(teamMembers[i]);
+    }
+    let genTeam = htmlBody(teamCards);
+    fs.writeFileSync("./dist/teamHtmlGenerated.html", genTeam);
+} 
+
+//After being called, this starts the application.
+function addMan() {
+    console.log("To create a Team Profile, a Manager must be entered below.")
+    inquirer.prompt ([
+        {
+            type: "input",
+            name: "managerName",
+            message: "Enter the Manager's name: ",
+            validate: needPosition,
+        },
+        {
+            type: "input",
+            name: "manID",
+            message: "Enter the Manager's ID number: ", 
+        },
+        {
+            type: "input",
+            name: "manEmail",
+            message: "Enter the Manager's email address: ",
+        },
+        {
+            type: "input",
+            name: "manOfficeNum",
+            message: "Enter the Manager's office number: ",
+        },
+    ]).then(answers => {
+        const manager = new Manager(answers.managerName, answers.manID, answers.manEmail, answers.manOfficeNum);
+        teamMembers.push(manager);
+        idArray.push(answers.manID);
+        makeTeam();
+    });
 }
 
+//After the manager is entered, these questions will be prompted.
 function makeTeam() {
     inquirer.prompt ([
       {
@@ -47,51 +94,10 @@ function makeTeam() {
                 generateTeam();
         }
     })
-}
+};
 
-  
-function generateTeam () {
-    //This will make a constructor DB
-    console.log(teamMembers)  
-    let teamCards = "";
-    for(let i = 0; i < teamMembers.length; i++) {
-       teamCards += card(teamMembers[i]);
-    }
-    let genTeam = htmlBody(teamCards);
-    fs.writeFileSync("./dist/teamHtmlGenerated.html", genTeam);
-}  
-  function addMan() {
-      inquirer.prompt ([
-          {
-              type: "input",
-              name: "managerName",
-              message: "Enter the Manager's name: ",
-              validate: needPosition,
-          },
-          {
-             type: "input",
-             name: "manID",
-             message: "Enter the Manager's ID number: ", 
-          },
-          {
-              type: "input",
-              name: "manEmail",
-              message: "Enter the Manager's email address: ",
-          },
-          {
-              type: "input",
-              name: "manOfficeNum",
-              message: "Enter the Manager's office number: ",
-          },
-      ]).then(answers => {
-          const manager = new Manager(answers.managerName, answers.manID, answers.manEmail, answers.manOfficeNum);
-          teamMembers.push(manager);
-          idArray.push(answers.manID);
-          makeTeam();
-      });
-    }
 
-  function addInt() {
+function addInt() {
     inquirer.prompt ([
         {
             type: "input",
@@ -99,9 +105,9 @@ function generateTeam () {
             message: "Enter the Intern's name: ",
         },
         {
-           type: "input",
-           name: "intID",
-           message: "Enter the Intern's ID number: ", 
+            type: "input",
+            name: "intID",
+            message: "Enter the Intern's ID number: ", 
         },
         {
             type: "input",
@@ -152,5 +158,7 @@ function addEng() {
 }
 
 
+//This will call the application by ensuring a manager is selected.
 addMan();
+
 //makeTeam();

@@ -1,8 +1,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const path = require("path");
+//const path = require("path");
 
-const Employee = require("./lib/employee");
+//const Employee = require("./lib/employee");
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
@@ -42,7 +42,7 @@ function addMan() {
         {
             type: "input",
             name: "managerName",
-            message: "To create a Team Profile, a Manager be on each team. Enter the Manager's name: ",
+            message: "To create a Team Profile, a Manager must be on each team. Enter the Manager's name: ",
             validate: needPosition,
         },
         {

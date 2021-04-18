@@ -19,7 +19,7 @@ function card (data) {
         <div class="card-body" id="infoSection">
             <ul class="list-group">
                 <li class="list-group-item">ID: ${data.id}</li>
-                <li class="list-group-item">Email: <a href="mailto:">${data.email}</a></li>
+                <li class="list-group-item">Email: <a href="mailto:${data.email}">${data.email}</a></li>
                 ${li}  
             </ul>
         </div>

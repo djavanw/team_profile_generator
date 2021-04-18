@@ -38,7 +38,6 @@ function generateTeam () {
 
 //After being called, this starts the application.
 function addMan() {
-    console.log("To create a Team Profile, a Manager must be entered below.")
     inquirer.prompt ([
         {
             type: "input",

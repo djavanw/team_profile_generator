@@ -15,16 +15,24 @@
   1.  [Description](#description)
   2.  [Demostration](#demostration)
   3.  [Installation](#installation)
-  4.  [Usage](#usage)
-  5.  [Screenshots](#screenshots)
-  6.  [License](#license)
-  7.  [Contributing](#contributing)
-  8.  [Tests](#tests)
-  9.  [Questions](#questions)
+  4.  [Technologies](#technologies)
+  5.  [Usage](#usage)
+  6.  [Screenshots](#screenshots)
+  7.  [License](#license)
+  8.  [Contributing](#contributing)
+  9.  [Tests](#tests)
+  10.  [Questions](#questions)
 
 ***
   ## Installation:
   This application requires a Node.js JavaScript runtime environment and the inquirer module in order to run.  A `.gitignore` file that includes `node_modules/` and `.DS_Store/` must be created in order to not track the `nodes_modules` or upload it to GitHub and this must be accomplished before installing any npm dependencies.  In addition, a `package.json` with the required dependencies must be included into the repository.  This must be created before installing any dependencies by running the following command: `npm init`.  The following package must also be loaded:  inquirer.  
+
+***
+  ## Technologies:
+  - HTML
+  - CSS
+  - JavaScript
+  - Node.js
 
 ***
   ## Usage:
@@ -33,10 +41,10 @@
 ***
 ## Screenshots 
 ### (Invoking Application and Responding to Questions)
-![Image_Invoking_User_Responses](./assets/images/)
+![Image_Invoking_User_Responses](./assets/images/starting_application.JPG)
 
-### (User Prompts with Choices)
-![Image_Prompts_with_Choices](./assets/images/)
+### (Adding addition Team Members)
+![Image_Prompts_with_Choices](./assets/images/entering_team_members.JPG)
 
 ***
   ## License:

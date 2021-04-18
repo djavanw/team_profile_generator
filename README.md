@@ -46,6 +46,9 @@
 ### (Adding addition Team Members)
 ![Image_Prompts_with_Choices](./assets/images/entering_team_members.JPG)
 
+### (Team Profile Generated)
+![Team_Profile](./assets/images/team_profile.jpeg)
+
 ***
   ## License:
   This project falls under the MIT License.  The full documentation for this license can be found at [MIT Full Documentation](https://choosealicense.com/licenses/mit).

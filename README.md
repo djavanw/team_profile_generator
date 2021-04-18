@@ -9,7 +9,8 @@
 
 ***
   ## Demostration:
-  [Video Demo](https://youtu.be/j87_kDIbs2E)
+  - [Video Demo](https://youtu.be/j87_kDIbs2E)
+  - [Video Demo of Email Links Working](https://youtu.be/1-FMEwzrJYQ)
 ***
   ## Table of Contents:
   1.  [Description](#description)
